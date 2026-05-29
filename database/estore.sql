@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 29 mai 2026 à 18:39
+-- Généré le : ven. 29 mai 2026 à 18:45
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -126,6 +126,21 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `created_at`) VA
 (2, 'fatimaezzahrae', 'fatimaezzahrae697@gmail.com', '$2y$10$HeG8mYi12.qTIHXsFirNN.iaL.ZREwPPa0km1foTHJ21cUx4ceJ.6', 'client', '2026-05-25 18:26:29'),
 (4, 'FatimaZahra', 'fati86868@gmail.com', '$2y$10$PRagp.dcF1ei0aD0VlqvhuM2x261/qF1ENxKPtTeNJiss7KQHcpUi', 'admin', '2026-05-25 19:30:54');
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `visites`
+--
+
+CREATE TABLE `visites` (
+  `id` int(11) NOT NULL,
+  `ip` varchar(45) DEFAULT NULL,
+  `pays` varchar(100) DEFAULT NULL,
+  `ville` varchar(100) DEFAULT NULL,
+  `page` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Index pour les tables déchargées
 --
@@ -167,6 +182,12 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `email` (`email`);
 
 --
+-- Index pour la table `visites`
+--
+ALTER TABLE `visites`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -199,6 +220,12 @@ ALTER TABLE `products`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT pour la table `visites`
+--
+ALTER TABLE `visites`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Contraintes pour les tables déchargées
