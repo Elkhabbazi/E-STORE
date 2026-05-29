@@ -110,10 +110,12 @@
   }
   .hero-cta .link-discover:hover { color: var(--gold); }
 
-  .hero-right {
-    position: relative; overflow: hidden;
+ .hero-right {
+    position: relative;
+    overflow: hidden;
     background: linear-gradient(135deg, #2c2015 0%, #1a1714 100%);
-  }
+    min-height: 100vh;
+}
   .hero-img-wrap {
     position: absolute; inset: 0;
     display: flex; align-items: center; justify-content: center;
@@ -374,3 +376,59 @@
   .hero-title    { animation: fadeUp 0.8s ease 0.25s both; }
   .hero-sub      { animation: fadeUp 0.8s ease 0.4s both; }
   .hero-cta      { animation: fadeUp 0.8s ease 0.55s both; }
+/* ── HERO SLIDER ── */
+.hero-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 1.2s ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.6rem;
+  z-index: 10;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(201,168,76,0.4);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.dot.active {
+  background: var(--gold);
+  transform: scale(1.3);
+}

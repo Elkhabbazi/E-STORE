@@ -64,17 +64,35 @@ require_once 'models/Visite.php';
       <a href="#categories" class="link-discover">Explorer les catégories</a>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="hero-pattern"></div>
-    <div class="hero-img-wrap">
-      <!-- Replace with: <img src="public/images/hero.jpg" alt="Caftan Royal"> -->
-      <div class="hero-img-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"><path d="M12 2C8 2 5 6 5 10c0 5 7 12 7 12s7-7 7-12c0-4-3-8-7-8z"/><circle cx="12" cy="10" r="2.5"/></svg>
-        <p>Image produit</p>
-        <small>Remplacer par votre photo</small>
-      </div>
+ <div class="hero-right">
+  <div class="hero-pattern"></div>
+
+  <div class="hero-slider">
+    <div class="hero-slide active">
+      <img src="public/images/hero1.jfif" alt="Caftan Royal">
+    </div>
+    <div class="hero-slide">
+      <img src="public/images/hero2.jfif" alt="Jabador">
+    </div>
+    <div class="hero-slide">
+      <img src="public/images/hero3.jfif" alt="Jellaba Élégante">
+    </div>
+    <div class="hero-slide">
+      <img src="public/images/hero4.jfif" alt="Jellaba Homme">
+    </div>
+    <div class="hero-slide">
+      <img src="public/images/hero5.jfif" alt="Takchita ">
+    </div>
+
+    <div class="slider-dots">
+      <span class="dot active" onclick="goToSlide(0)"></span>
+      <span class="dot" onclick="goToSlide(1)"></span>
+      <span class="dot" onclick="goToSlide(2)"></span>
+      <span class="dot" onclick="goToSlide(3)"></span>
+      <span class="dot" onclick="goToSlide(4)"></span>
     </div>
   </div>
+</div>
 
   <div class="hero-scroll-hint">
     <span class="scroll-line"></span>
@@ -320,6 +338,22 @@ require_once 'models/Visite.php';
     <p class="footer-copy">Fait avec soin au Maroc 🇲🇦</p>
   </div>
 </footer>
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots   = document.querySelectorAll('.dot');
 
+  function goToSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = n;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+  }
+
+  setInterval(() => {
+    goToSlide((currentSlide + 1) % slides.length);
+  }, 4000);
+</script>
 </body>
 </html>

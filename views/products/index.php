@@ -22,8 +22,8 @@ if ($search !== '') {
 }
 
 if ($category !== '') {
-    $where[]  = "category = ?";
-    $params[] = $category;
+    $where[]  = "category LIKE ?";
+    $params[] = "%$category%";
 }
 
 // Tri (compatible PHP 7)
