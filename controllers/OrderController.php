@@ -3,6 +3,7 @@ session_start();
 require_once '../config/database.php';
 require_once '../models/Order.php';
 require_once '../models/Cart.php';
+require_once '../config/csrf.php';
 
 // Vérifier que l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
@@ -32,6 +33,7 @@ switch ($action) {
 // FONCTION 1 : Valider la commande
 // ─────────────────────────────────────────
 function validerCommande() {
+     verifierTokenCSRF();
     $user_id = $_SESSION['user_id'];
     $cart    = new Cart();
     $order   = new Order();

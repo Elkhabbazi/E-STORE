@@ -2,6 +2,7 @@
 session_start();
 require_once '../../config/database.php';
 require_once '../../models/Cart.php';
+require_once '../../config/csrf.php';
 
 // Si l'utilisateur n'est pas connecté → redirection
 if (!isset($_SESSION['user_id'])) {
@@ -174,7 +175,8 @@ $total   = $cart->getTotal($user_id);
 
       <!-- Formulaire de commande -->
       <form method="POST" action="../../controllers/OrderController.php?action=valider">
-        <div class="address-section">
+      <?= champCSRF() ?> 
+      <div class="address-section">
           <label class="address-label">Adresse de livraison</label>
           <textarea name="address" class="address-input"
             placeholder="N° rue, quartier, ville, code postal…" required></textarea>

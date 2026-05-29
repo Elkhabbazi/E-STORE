@@ -1,12 +1,12 @@
 <?php
 session_start();
 require_once '../../config/database.php';
-
+require_once '../../config/csrf.php';
 $errors  = [];
 $success = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
+    verifierTokenCSRF();
     $name     = trim($_POST['name']);
     $email    = trim($_POST['email']);
     $password = trim($_POST['password']);
@@ -117,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <?php if (!$success): ?>
             <form method="POST" action="">
-
+                <?= champCSRF() ?>
                 <!-- Nom complet -->
                 <div class="field">
                     <label for="name">Nom complet</label>

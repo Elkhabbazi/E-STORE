@@ -1,11 +1,12 @@
 <?php
 session_start();
 require_once '../../config/database.php';
+require_once '../../config/csrf.php';
 
 $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
+    verifierTokenCSRF();
     $email    = trim($_POST['email']);
     $password = trim($_POST['password']);
 
@@ -97,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endif; ?>
 
             <form method="POST" action="">
-
+                 <?= champCSRF() ?>
                 <div class="field">
                     <label for="email">Adresse email</label>
                     <div class="input-wrap">
