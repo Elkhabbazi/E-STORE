@@ -37,12 +37,10 @@ require_once 'models/Visite.php';
     </div>
   </a>
   <div class="nav-links">
-    <a href="#">Collections</a>
-    <a href="#">Caftans</a>
-    <a href="#">Takchitas</a>
-    <a href="#">Jellabas</a>
-    <a href="#">Nouveautés</a>
-  </div>
+  <a href="views/products/index.php">Toutes les collections</a>
+  <a href="views/products/femmes.php">Collection Femmes</a>
+  <a href="views/products/hommes.php">Collection Hommes</a>
+</div>
   <div class="nav-actions">
     <a href="views/auth/login.php" class="btn-outline">Connexion</a>
     <a href="views/auth/register.php" class="btn-gold">Créer un compte</a>

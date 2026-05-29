@@ -51,7 +51,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Collection Hommes — Dar Al Caftan</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,400&family=Cinzel:wght@400&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="../../public/css/hommes.css">
 </head>
 <body>
 
