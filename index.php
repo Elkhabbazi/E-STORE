@@ -1,3 +1,8 @@
+<?php
+session_start();
+require_once 'models/Visite.php';     
+(new Visite())->enregistrer('Accueil'); 
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

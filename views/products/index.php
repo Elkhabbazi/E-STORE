@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once '../../config/database.php';
+require_once '../../models/Visite.php';
+(new Visite())->enregistrer('Catalogue');
 
 $conn = getConnection();
 
