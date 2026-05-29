@@ -60,8 +60,8 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <a href="../../index.php" class="nav-brand">DAR AL CAFTAN</a>
   <div class="nav-links">
     <a href="index.php">Tous les produits</a>
-    <a href="femmes.php" class="active">Collection Hommes</a>
-    <a href="hommes.php">Collection Hommes</a>
+<a href="femmes.php">Collection Femmes</a>
+<a href="hommes.php" class="active">Collection Hommes</a>  ← CORRECT
   </div>
   <div class="nav-actions">
     <?php if (isset($_SESSION['user_id'])): ?>
