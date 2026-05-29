@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 29 mai 2026 à 20:54
+-- Généré le : sam. 30 mai 2026 à 00:19
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -186,7 +186,73 @@ INSERT INTO `visites` (`id`, `ip`, `pays`, `ville`, `page`, `created_at`) VALUES
 (4, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 18:38:58'),
 (5, '::1', 'Inconnu', 'Inconnue', 'Détail produit', '2026-05-29 18:39:57'),
 (6, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 18:39:57'),
-(7, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-29 18:46:52');
+(7, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-29 18:46:52'),
+(8, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 19:00:37'),
+(9, '::1', 'Inconnu', 'Inconnue', 'Détail produit', '2026-05-29 19:01:01'),
+(10, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 19:02:48'),
+(11, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 19:03:06'),
+(12, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 19:03:12'),
+(13, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-29 19:06:00'),
+(14, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 19:06:08'),
+(15, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 19:58:39'),
+(16, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 19:59:09'),
+(17, '::1', 'Inconnu', 'Inconnue', 'Détail produit', '2026-05-29 19:59:34'),
+(18, '::1', 'Inconnu', 'Inconnue', 'Détail produit', '2026-05-29 19:59:57'),
+(19, '::1', 'Inconnu', 'Inconnue', 'Collection Femmes', '2026-05-29 20:01:28'),
+(20, '::1', 'Inconnu', 'Inconnue', 'Collection Femmes', '2026-05-29 20:03:40'),
+(21, '::1', 'Inconnu', 'Inconnue', 'Collection Hommes', '2026-05-29 20:04:10'),
+(22, '::1', 'Inconnu', 'Inconnue', 'Collection Hommes', '2026-05-29 20:04:27'),
+(23, '::1', 'Inconnu', 'Inconnue', 'Collection Hommes', '2026-05-29 20:04:36'),
+(24, '::1', 'Inconnu', 'Inconnue', 'Collection Hommes', '2026-05-29 20:05:19'),
+(25, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 20:05:22'),
+(26, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 20:05:29'),
+(27, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-29 20:19:47'),
+(28, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 20:19:53'),
+(29, '::1', 'Inconnu', 'Inconnue', 'Collection Hommes', '2026-05-29 20:20:13'),
+(30, '::1', 'Inconnu', 'Inconnue', 'Collection Hommes', '2026-05-29 20:20:19'),
+(31, '::1', 'Inconnu', 'Inconnue', 'Collection Femmes', '2026-05-29 20:20:25'),
+(32, '::1', 'Inconnu', 'Inconnue', 'Collection Hommes', '2026-05-29 20:20:32'),
+(33, '::1', 'Inconnu', 'Inconnue', 'Détail produit', '2026-05-29 20:22:30'),
+(34, '::1', 'Inconnu', 'Inconnue', 'Collection Hommes', '2026-05-29 20:27:55'),
+(35, '::1', 'Inconnu', 'Inconnue', 'Collection Hommes', '2026-05-29 20:28:28'),
+(36, '::1', 'Inconnu', 'Inconnue', 'Collection Femmes', '2026-05-29 20:28:31'),
+(37, '::1', 'Inconnu', 'Inconnue', 'Collection Hommes', '2026-05-29 20:28:35'),
+(38, '::1', 'Inconnu', 'Inconnue', 'Collection Femmes', '2026-05-29 20:28:41'),
+(39, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 20:38:34'),
+(40, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-29 20:42:01'),
+(41, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-29 21:19:55'),
+(42, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-29 21:44:17'),
+(43, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-29 21:45:31'),
+(44, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-29 21:47:49'),
+(45, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-29 21:49:36'),
+(46, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-29 21:49:47'),
+(47, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-29 21:50:51'),
+(48, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-29 21:52:31'),
+(49, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-29 21:53:59'),
+(50, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-29 21:56:36'),
+(51, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-29 21:56:39'),
+(52, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-29 21:57:10'),
+(53, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 22:01:14'),
+(54, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 22:01:36'),
+(55, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 22:02:03'),
+(56, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 22:02:03'),
+(57, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 22:02:03'),
+(58, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 22:02:06'),
+(59, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 22:02:11'),
+(60, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 22:04:00'),
+(61, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 22:09:06'),
+(62, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-29 22:09:23'),
+(63, '::1', 'Inconnu', 'Inconnue', 'Collection Hommes', '2026-05-29 22:09:46'),
+(64, '::1', 'Inconnu', 'Inconnue', 'Collection Femmes', '2026-05-29 22:09:51'),
+(65, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 22:09:54'),
+(66, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-29 22:10:06'),
+(67, '::1', 'Inconnu', 'Inconnue', 'Collection Femmes', '2026-05-29 22:10:15'),
+(68, '::1', 'Inconnu', 'Inconnue', 'Collection Hommes', '2026-05-29 22:10:19'),
+(69, '::1', 'Inconnu', 'Inconnue', 'Collection Hommes', '2026-05-29 22:10:23'),
+(70, '::1', 'Inconnu', 'Inconnue', 'Collection Hommes', '2026-05-29 22:10:26'),
+(71, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-29 22:10:30'),
+(72, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 22:10:43'),
+(73, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-29 22:10:49');
 
 --
 -- Index pour les tables déchargées
@@ -272,7 +338,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `visites`
 --
 ALTER TABLE `visites`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- Contraintes pour les tables déchargées
