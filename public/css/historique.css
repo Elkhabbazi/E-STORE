@@ -1,0 +1,25 @@
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root { --gold:#C9A84C; --ivory:#FAF7F0; --charcoal:#1A1714; --border:rgba(201,168,76,0.25); --bg:#F4F0E8; }
+body { font-family:'Raleway',sans-serif; background:var(--bg); color:var(--charcoal); }
+nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 4rem; background:var(--ivory); border-bottom:0.5px solid var(--border); }
+.nav-brand { font-size:0.9rem; letter-spacing:0.2em; font-weight:500; text-decoration:none; color:var(--charcoal); }
+.nav-links { display:flex; gap:1rem; }
+.nav-links a { font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none; color:#6B6560; transition:color 0.2s; }
+.nav-links a:hover { color:var(--gold); }
+.container { max-width:900px; margin:3rem auto; padding:0 2rem; }
+h1 { font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:300; margin-bottom:0.5rem; }
+h1 em { color:var(--gold); font-style:italic; }
+.subtitle { font-size:0.75rem; color:#6B6560; margin-bottom:2rem; }
+.order-card { background:var(--ivory); border:0.5px solid var(--border); margin-bottom:1rem; overflow:hidden; }
+.order-header { display:flex; justify-content:space-between; align-items:center; padding:1rem 1.5rem; border-bottom:0.5px solid var(--border); flex-wrap:wrap; gap:0.5rem; }
+.order-num { font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; font-weight:500; }
+.order-date { font-size:0.7rem; color:#6B6560; }
+.order-status { font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; padding:0.3rem 0.8rem; border-radius:2px; color:white; }
+.order-body { padding:1rem 1.5rem; display:flex; justify-content:space-between; align-items:center; }
+.order-total { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:300; }
+.order-total small { font-family:'Raleway',sans-serif; font-size:0.6rem; color:#6B6560; }
+.btn-detail { font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; padding:0.5rem 1.2rem; text-decoration:none; border:0.5px solid var(--charcoal); color:var(--charcoal); transition:all 0.2s; }
+.btn-detail:hover { background:var(--charcoal); color:var(--ivory); }
+.empty { text-align:center; padding:4rem; color:#6B6560; }
+.empty-icon { font-size:3rem; margin-bottom:1rem; }

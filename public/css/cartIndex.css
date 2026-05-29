@@ -1,0 +1,148 @@
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gold: #C9A84C;
+  --gold-dark: #8B6914;
+  --ivory: #FAF7F0;
+  --charcoal: #1A1714;
+  --warm-gray: #6B6560;
+  --border: rgba(201,168,76,0.25);
+  --bg: #F4F0E8;
+}
+
+body { font-family: 'Raleway', sans-serif; background: var(--bg); color: var(--charcoal); }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 4rem;
+  background: rgba(250,247,240,0.96); backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid var(--border);
+}
+.nav-logo { text-decoration: none; display: flex; align-items: center; gap: 12px; }
+.nav-logo-text { font-family: 'Cinzel', serif; font-size: 0.95rem; letter-spacing: 0.18em; color: var(--charcoal); display: flex; flex-direction: column; gap: 2px; }
+.nav-logo-text span { font-size: 0.5rem; letter-spacing: 0.35em; color: var(--gold); font-family: 'Raleway', sans-serif; }
+.nav-right { display: flex; gap: 1rem; align-items: center; }
+.btn-sm { font-family: 'Raleway', sans-serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.5rem 1.2rem; text-decoration: none; transition: all 0.2s; }
+.btn-outline { border: 0.5px solid var(--charcoal); color: var(--charcoal); }
+.btn-outline:hover { background: var(--charcoal); color: var(--ivory); }
+.btn-gold { background: var(--gold); color: var(--ivory); border: none; }
+.btn-gold:hover { background: var(--gold-dark); }
+
+/* ── PAGE HEADER ── */
+.page-header { background: var(--charcoal); padding: 3rem 6rem; position: relative; overflow: hidden; }
+.page-header-pattern { position: absolute; inset: 0; opacity: 0.04; background-image: repeating-linear-gradient(45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%); background-size: 20px 20px; }
+.page-header-inner { position: relative; z-index: 1; }
+.page-eyebrow { font-size: 0.55rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem; }
+.page-eyebrow::before { content: ''; width: 2rem; height: 0.5px; background: var(--gold); }
+.page-title { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; color: var(--ivory); }
+.page-title em { font-style: italic; color: var(--gold); }
+
+/* ── MAIN LAYOUT ── */
+.cart-layout { display: grid; grid-template-columns: 1fr 360px; gap: 2rem; padding: 3rem 6rem 5rem; align-items: start; }
+
+/* ── MESSAGES ── */
+.alert { padding: 1rem 1.5rem; margin-bottom: 1.5rem; font-size: 0.8rem; border-radius: 2px; }
+.alert-error { background: #FDF0EC; border-left: 3px solid #D4845A; color: #8B3A1A; }
+.alert-success { background: #F0F7EE; border-left: 3px solid #6B8F5E; color: #3A6A31; }
+
+/* ── PANIER VIDE ── */
+.empty-cart { grid-column: 1 / -1; text-align: center; padding: 5rem 2rem; background: var(--ivory); }
+.empty-ornament { font-family: 'Cormorant Garamond', serif; font-size: 5rem; color: var(--border); }
+.empty-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; margin: 1rem 0 0.5rem; }
+.empty-sub { font-size: 0.75rem; color: var(--warm-gray); margin-bottom: 2rem; }
+.empty-link { display: inline-block; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.8rem 2.5rem; background: var(--charcoal); color: var(--ivory); text-decoration: none; transition: background 0.2s; }
+.empty-link:hover { background: var(--gold); }
+
+/* ── LISTE ARTICLES ── */
+.cart-items { display: flex; flex-direction: column; gap: 1px; background: var(--border); }
+
+.cart-item {
+  background: var(--ivory);
+  display: grid; grid-template-columns: 90px 1fr auto auto;
+  gap: 1.5rem; align-items: center;
+  padding: 1.5rem;
+}
+
+.item-img {
+  width: 90px; height: 110px;
+  background: linear-gradient(135deg, #2c2015, #1a1714);
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.item-img img { width: 100%; height: 100%; object-fit: cover; }
+.item-img-icon { opacity: 0.2; font-size: 2rem; }
+
+.item-info { min-width: 0; }
+.item-category { font-size: 0.55rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
+.item-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.item-price-unit { font-size: 0.75rem; color: var(--warm-gray); }
+
+/* Contrôle quantité */
+.qty-control { display: flex; align-items: center; gap: 0; border: 0.5px solid var(--border); }
+.qty-btn {
+  width: 32px; height: 32px; border: none; background: transparent;
+  font-size: 1.1rem; cursor: pointer; color: var(--warm-gray);
+  transition: background 0.2s; display: flex; align-items: center; justify-content: center;
+}
+.qty-btn:hover { background: var(--bg); color: var(--charcoal); }
+.qty-value { width: 36px; height: 32px; text-align: center; font-family: 'Raleway', sans-serif; font-size: 0.8rem; border: none; border-left: 0.5px solid var(--border); border-right: 0.5px solid var(--border); background: transparent; color: var(--charcoal); -moz-appearance: textfield; }
+.qty-value::-webkit-outer-spin-button, .qty-value::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+/* Sous-total + supprimer */
+.item-right { display: flex; flex-direction: column; align-items: flex-end; gap: 0.8rem; min-width: 100px; }
+.item-subtotal { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; }
+.item-subtotal small { font-family: 'Raleway', sans-serif; font-size: 0.6rem; color: var(--warm-gray); font-weight: 300; }
+.btn-remove {
+  font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--warm-gray); text-decoration: none;
+  border-bottom: 0.5px solid transparent; padding-bottom: 1px;
+  transition: all 0.2s;
+}
+.btn-remove:hover { color: #c0392b; border-color: #c0392b; }
+
+/* ── RÉSUMÉ COMMANDE ── */
+.cart-summary {
+  background: var(--ivory); padding: 2rem;
+  border: 0.5px solid var(--border);
+  position: sticky; top: 80px;
+}
+.summary-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 0.5px solid var(--border); }
+.summary-line { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--warm-gray); margin-bottom: 0.7rem; }
+.summary-total { display: flex; justify-content: space-between; align-items: baseline; margin: 1.5rem 0; padding-top: 1rem; border-top: 0.5px solid var(--border); }
+.summary-total-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; }
+.summary-total-price { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; }
+.summary-total-price small { font-size: 0.6rem; font-family: 'Raleway', sans-serif; color: var(--warm-gray); }
+
+/* Formulaire adresse */
+.address-section { margin: 1.5rem 0; }
+.address-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--charcoal); margin-bottom: 0.5rem; display: block; }
+.address-input {
+  width: 100%; padding: 0.8rem 1rem;
+  font-family: 'Raleway', sans-serif; font-size: 0.8rem;
+  border: 0.5px solid var(--border); background: var(--bg);
+  color: var(--charcoal); outline: none; resize: vertical; min-height: 80px;
+  transition: border-color 0.2s;
+}
+.address-input:focus { border-color: var(--gold); }
+
+.btn-order {
+  width: 100%; padding: 1rem; background: var(--charcoal); color: var(--ivory);
+  border: none; font-family: 'Raleway', sans-serif; font-size: 0.7rem;
+  letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer;
+  transition: background 0.25s; margin-top: 0.5rem;
+}
+.btn-order:hover { background: var(--gold); }
+
+.btn-continue {
+  display: block; width: 100%; text-align: center; margin-top: 0.8rem;
+  font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--warm-gray); text-decoration: none;
+  border: 0.5px solid var(--border); padding: 0.7rem;
+  transition: all 0.2s;
+}
+.btn-continue:hover { border-color: var(--charcoal); color: var(--charcoal); }
+
+.secure-note { text-align: center; font-size: 0.6rem; color: var(--warm-gray); margin-top: 1rem; }
