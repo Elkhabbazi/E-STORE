@@ -222,21 +222,33 @@ require_once 'models/Visite.php';
     <div class="product-card">
       <div class="product-img">
         <div class="product-img-inner"></div>
+
+        
         <?php if (!empty($product['image']) && file_exists($product['image'])): ?>
-          <img src="<?= htmlspecialchars($product['image']) ?>" alt="<?= htmlspecialchars($product['name']) ?>" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.9;">
+
+        <img src="<?= htmlspecialchars($product['image']) ?>" alt="<?= htmlspecialchars($product['name']) ?>" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.9;">
+
         <?php else: ?>
+
           <div class="product-img-icon">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C9 2 7 5 7 8c0 4 5 12 5 12s5-8 5-12c0-3-2-6-5-6z"/></svg>
           </div>
+
         <?php endif; ?>
+
         <?php if (!empty($product['is_new'])): ?>
+
           <span class="product-badge">Nouveau</span>
+
         <?php endif; ?>
         <!-- Boutons overlay -->
         <div class="product-overlay">
           <a href="views/products/detail.php?id=<?= $product['id'] ?>" class="overlay-btn">Voir le détail</a>
+
           <?php if (isset($_SESSION['user_id']) && isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'client'): ?>
+
             <a href="controllers/CartController.php?action=add&product_id=<?= $product['id'] ?>" class="overlay-btn overlay-btn-gold">+ Panier</a>
+            
           <?php else: ?>
             <a href="views/auth/login.php" class="overlay-btn overlay-btn-gold">+ Panier</a>
           <?php endif; ?>
