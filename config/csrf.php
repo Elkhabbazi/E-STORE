@@ -1,8 +1,8 @@
 <?php
-// ─────────────────────────────────────────
+
 // Protection CSRF
 // Génère un token unique par session
-// ─────────────────────────────────────────
+
 
 function genererTokenCSRF() {
     if (empty($_SESSION['csrf_token'])) {
