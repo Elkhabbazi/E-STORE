@@ -42,7 +42,7 @@ function ajouterProduit() {
     // Gérer l'upload de l'image
     $imageName = null;
     if (!empty($_FILES['image']['name'])) {
-        $uploadDir  = '../public/images/';
+        $uploadDir  = dirname(__DIR__) . '/public/images/';
         $extension  = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
         $imageName  = uniqid('prod_') . '.' . $extension;
         move_uploaded_file($_FILES['image']['tmp_name'], $uploadDir . $imageName);
@@ -80,7 +80,7 @@ function modifierProduit() {
 
     // Si une nouvelle image est uploadée
     if (!empty($_FILES['image']['name'])) {
-        $uploadDir = '../public/images/';
+        $uploadDir = dirname(__DIR__) . '/public/images/';
         $extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
         $imageName = uniqid('prod_') . '.' . $extension;
         move_uploaded_file($_FILES['image']['tmp_name'], $uploadDir . $imageName);

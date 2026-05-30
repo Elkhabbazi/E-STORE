@@ -250,7 +250,6 @@ require_once 'models/Visite.php';
         <p class="product-price"><?= number_format($product['price'], 2) ?> DH <span>TTC</span></p>
         <div class="product-footer">
           <span class="product-stock">✦ En stock</span>
-          <span class="product-cta">Voir le détail →</span>
         </div>
       </div>
     </div>
