@@ -195,3 +195,4 @@ footer {
 }
 .footer-logo { font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 0.18em; color: var(--ivory); }
 .footer-copy { font-size: 0.6rem; color: rgba(250,247,240,0.25); letter-spacing: 0.1em; }
+.cat-bg { position: relative; }

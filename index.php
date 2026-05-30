@@ -129,11 +129,9 @@ require_once 'models/Visite.php';
     <h2 class="section-title">Explorer par catégorie</h2>
   </div>
   <div class="categories-grid">
-
-    <div class="cat-card">
-      <div class="cat-bg"><div class="cat-bg-pattern"></div></div>
-      <div class="cat-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 2C9 2 6.5 5 6.5 8.5c0 4 5.5 13.5 5.5 13.5s5.5-9.5 5.5-13.5C17.5 5 15 2 12 2z"/></svg>
+<div class="cat-card">
+      <div class="cat-bg">
+        <img src="public/images/CaftanRoyal.jfif" alt="Caftan" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.7;">
       </div>
       <div class="cat-overlay">
         <p class="cat-label">Pour elle</p>
@@ -146,9 +144,8 @@ require_once 'models/Visite.php';
     </div>
 
     <div class="cat-card">
-      <div class="cat-bg" style="background: linear-gradient(160deg, #1a1a2c 0%, #12121c 100%);"><div class="cat-bg-pattern"></div></div>
-      <div class="cat-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 2l-2 4-4 .5 3 2.8-.7 4.2L12 11l3.7 2.5-.7-4.2 3-2.8-4-.5z"/></svg>
+      <div class="cat-bg" style="background:#1a1a2c;">
+        <img src="public/images/takchitaDoreeRouge.jfif" alt="Takchita" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.7;">
       </div>
       <div class="cat-overlay">
         <p class="cat-label">Pour elle</p>
@@ -161,9 +158,8 @@ require_once 'models/Visite.php';
     </div>
 
     <div class="cat-card">
-      <div class="cat-bg" style="background: linear-gradient(160deg, #0d2015 0%, #081510 100%);"><div class="cat-bg-pattern"></div></div>
-      <div class="cat-icon">
-        <svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="5" ry="9"/></svg>
+      <div class="cat-bg" style="background:#0d2015;">
+        <img src="public/images/jellabaRoseF.jfif" alt="Jellaba" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.7;">
       </div>
       <div class="cat-overlay">
         <p class="cat-label">Pour tous</p>
@@ -224,10 +220,14 @@ require_once 'models/Visite.php';
         <div class="product-img-inner"></div>
 
         
-        <?php if (!empty($product['image']) && file_exists($product['image'])): ?>
-
-        <img src="<?= htmlspecialchars($product['image']) ?>" alt="<?= htmlspecialchars($product['name']) ?>" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.9;">
-
+<?php if (!empty($product['image'])): ?>
+   <?php
+          $imgPath = $product['image'];
+          if (!str_starts_with($imgPath, 'public/') && !str_starts_with($imgPath, 'http')) {
+              $imgPath = 'public/images/' . $imgPath;
+          }
+        ?>
+        <img src="<?= htmlspecialchars($imgPath) ?>" alt="<?= htmlspecialchars($product['name']) ?>" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.9;">
         <?php else: ?>
 
           <div class="product-img-icon">
