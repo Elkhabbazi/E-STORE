@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 30 mai 2026 à 15:01
+-- Généré le : sam. 30 mai 2026 à 16:38
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -133,7 +133,17 @@ INSERT INTO `products` (`id`, `name`, `description`, `price`, `image`, `category
 (39, 'Jellaba Homme Bleu Nuit Prestige', 'Ce modèle se distingue par sa teinte bleu nuit, profonde et intensément masculine, qui offre une alternative ultra-chic au noir classique. Confectionnée dans un tissu noble et lourd (parfait pour l’hiver ou la mi-saison), cette djellaba offre un tombé majestueux et une structure impeccable qui met en valeur la carrure tout en garantissant un confort thermique absolu.', 950.00, 'prod_6a19dbdf3a02f.jpeg', 'Jellaba Homme', 9, '2026-05-29 18:33:03', 'Cérémonie, Soirée de Mariage (Invitée), Aïd', 'Fès / Rabat', 'M / L / XL', 'Bleu Nuit'),
 (40, 'Jellaba Homme Blanc Cassé Prestige', 'Ce modèle se distingue par sa teinte blanc cassé douce et lumineuse, une couleur royale traditionnellement plébiscitée pour les grandes occasions et les jours de fête. Confectionnée dans un tissu haut de gamme au tombé fluide et impeccable, elle offre une silhouette élancée tout en garantissant une opacité parfaite et un confort absolu.', 800.00, 'prod_6a19dc286a489.jpeg', 'Jellaba Homme', 3, '2026-05-29 18:34:16', 'Prière de l\'Aïd, Vendredi, Moussem, Cérémonie de Henné', 'Oued Zem / Fès', 'S / M / L / XL', 'Blanc Cassé'),
 (41, 'Jellaba Homme Beige Camel & Chocolat', 'Ce modèle se distingue par sa superbe teinte Beige / Café au lait, une couleur chaude, sobre et profondément masculine, idéale pour une allure distinguée en toute saison. Confectionnée dans un tissu texturé de qualité supérieure offrant un superbe tombé lourd, cette djellaba garantit une structure impeccable qui met en valeur la carrure tout en offrant un confort absolu.', 850.00, 'prod_6a19dc686f0e7.jpeg', 'Jellaba Homme', 4, '2026-05-29 18:35:20', 'Quotidien Chic, Prière du Vendredi, Visites Familiales', 'Chefchaouen / Fès', 'M / L / XL', 'Beige Camel / Chocolat'),
-(42, 'Jellaba Homme Bleu Azur', 'Ce modèle se distingue par sa superbe teinte bleu azur pastel, une couleur lumineuse, apaisante et hautement distinguée, particulièrement appréciée pour les saisons douces. Confectionnée dans un tissu léger, fluide et d\'une remarquable douceur, elle épouse les mouvements avec naturel tout en offrant un tombé droit impeccable et un confort thermique optimal.', 700.00, 'prod_6a19dcabb3d24.jpeg', 'Jellaba Homme', 6, '2026-05-29 18:36:27', 'Sorties d\'Été, Quotidien, Réceptions simples, Aïd', 'Tanger / Chefchaouen', 'S / M / L', 'Bleu Azur / Bleu Clair');
+(42, 'Jellaba Homme Bleu Azur', 'Ce modèle se distingue par sa superbe teinte bleu azur pastel, une couleur lumineuse, apaisante et hautement distinguée, particulièrement appréciée pour les saisons douces. Confectionnée dans un tissu léger, fluide et d\'une remarquable douceur, elle épouse les mouvements avec naturel tout en offrant un tombé droit impeccable et un confort thermique optimal.', 700.00, 'prod_6a19dcabb3d24.jpeg', 'Jellaba Homme', 6, '2026-05-29 18:36:27', 'Sorties d\'Été, Quotidien, Réceptions simples, Aïd', 'Tanger / Chefchaouen', 'S / M / L', 'Bleu Azur / Bleu Clair'),
+(43, 'Takchita de cérémonie brodée or & argent - Sultane', 'Splendide takchita marocaine haut de gamme en tissu scintillant avec broderies dorées et argentées.', 2475.00, 'takchitaBordeeOR.jfif', 'Takchita', 5, '2026-05-30 14:27:39', 'Mariage, Soirée de gala', 'Fès', 'S,M,L,XL', 'Ivoire, Or, Argent'),
+(44, 'Caftan brodé Bleu Ciel & Or - Royale', 'Élégant caftan marocain bleu ciel richement orné de broderies dorées.', 1980.00, 'caftanBleuCielOr.jfif', 'Caftan', 4, '2026-05-30 14:27:39', 'Mariage, Fiançailles', 'Marrakech', 'S,M,L,XL', 'Bleu ciel, Or'),
+(45, 'Caftan royal moderne Bleu glacier & Broderie argentée', 'Caftan de cérémonie bleu glacier avec broderies argentées et ceinture décorative.', 2750.00, 'CaftanRoyalModerne.jfif', 'Caftan', 3, '2026-05-30 14:27:39', 'Mariage, Cérémonie prestigieuse', 'Fès', 'S,M,L,XL', 'Bleu glacier, Argent'),
+(46, 'Jabador homme noir avec broderie argentée - Sobh', 'Jabador de cérémonie noir avec broderies argentées.', 715.00, 'JabadorHommeNoir.jfif', 'Jabador Homme', 8, '2026-05-30 14:27:39', 'Mariage, Aïd, Ramadan', 'Casablanca', 'M,L,XL,XXL', 'Noir, Argent'),
+(47, 'Jabador homme bordeaux transparent avec broderie blanche', 'Jabador élégant bordeaux avec cape brodée blanche.', 605.00, 'JabadorHommeGrouna.jfif', 'Jabador Homme', 6, '2026-05-30 14:27:39', 'Mariage, Soirée chic', 'Rabat', 'M,L,XL,XXL', 'Bordeaux, Blanc'),
+(48, 'Jellaba homme gris anthracite avec broderie noire', 'Jellaba marocaine élégante pour homme.', 495.00, 'jellabaHommeBlack&Gris.jfif', 'Jellaba Homme', 8, '2026-05-30 14:27:39', 'Prière, Sortie habillée', 'Meknès', 'M,L,XL,XXL', 'Gris anthracite, Noir'),
+(50, 'Jellaba femme vert olive avec broderie noire', 'Jellaba femme vert olive avec détails brodés.', 550.00, 'JellabaFemmeZiti.jfif', 'Jellaba Femme', 5, '2026-05-30 14:27:39', 'Cérémonie, Soirée', 'Fès', 'S,M,L,XL', 'Vert olive, Noir'),
+(51, 'Jellaba femme bordeaux avec broderie rose et beige', 'Jellaba femme élégante avec broderies raffinées.', 550.00, 'jellabaFemmeGrouna.jfif', 'Jellaba Femme', 7, '2026-05-30 14:27:39', 'Cérémonie, Sortie habillée', 'Marrakech', 'S,M,L,XL', 'Bordeaux, Rose, Beige'),
+(52, 'Jabador homme vert forêt avec broderie blanche', 'Jabador de cérémonie pour homme en vert forêt avec broderies blanches.', 605.00, 'jabadorHommeGreen.jpeg', 'Jabador Homme', 5, '2026-05-30 14:27:39', 'Mariage, Cérémonie', 'Rabat', 'M,L,XL,XXL', 'Vert forêt, Blanc'),
+(53, 'Jabador homme bleu royal transparent avec broderie blanche', 'Jabador de cérémonie bleu royal avec broderies blanches et argentées.', 605.00, 'jabadorHommeBlue.jfif', 'Jabador Homme', 7, '2026-05-30 14:27:39', 'Mariage, Cérémonie', 'Casablanca', 'M,L,XL,XXL', 'Bleu royal, Blanc, Argent');
 
 -- --------------------------------------------------------
 
@@ -266,7 +276,15 @@ INSERT INTO `visites` (`id`, `ip`, `pays`, `ville`, `page`, `created_at`) VALUES
 (84, '::1', 'Inconnu', 'Inconnue', 'Collection Femmes', '2026-05-30 12:11:46'),
 (85, '::1', 'Inconnu', 'Inconnue', 'Collection Femmes', '2026-05-30 12:11:51'),
 (86, '::1', 'Inconnu', 'Inconnue', 'Détail produit', '2026-05-30 12:18:27'),
-(87, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-30 12:18:33');
+(87, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-30 12:18:33'),
+(88, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-30 13:06:39'),
+(89, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-30 13:07:22'),
+(90, '::1', 'Inconnu', 'Inconnue', 'Détail produit', '2026-05-30 13:07:40'),
+(91, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-30 13:08:09'),
+(92, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-30 13:09:40'),
+(93, '::1', 'Inconnu', 'Inconnue', 'Accueil', '2026-05-30 14:29:52'),
+(94, '::1', 'Inconnu', 'Inconnue', 'Catalogue', '2026-05-30 14:30:30'),
+(95, '::1', 'Inconnu', 'Inconnue', 'Détail produit', '2026-05-30 14:32:01');
 
 --
 -- Index pour les tables déchargées
@@ -340,7 +358,7 @@ ALTER TABLE `order_items`
 -- AUTO_INCREMENT pour la table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT pour la table `users`
@@ -352,7 +370,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `visites`
 --
 ALTER TABLE `visites`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- Contraintes pour les tables déchargées
