@@ -1,0 +1,7 @@
+{
+  "category": "Takchita",
+  "genre": "Femme",
+  "couleur": "blanc",
+  "occasion": "Cérémonie",
+  "description": "Une femme porte une takchita blanche avec des détails roses, composée d'une robe en dessous et d'un manteau par dessus."
+}

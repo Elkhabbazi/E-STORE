@@ -1,0 +1,233 @@
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --gold:#C9A84C; --gold-light:#E8D5A3; --gold-dark:#8B6914;
+  --ivory:#FAF7F0; --charcoal:#1A1714; --warm-gray:#6B6560;
+  --border:rgba(201,168,76,0.25); --bg-soft:#F4F0E8;
+}
+
+html { scroll-behavior:smooth; }
+body { font-family:'Raleway',sans-serif; background:var(--bg-soft); color:var(--charcoal); overflow-x:hidden; }
+
+/* ── NAV ── */
+nav {
+  position:sticky; top:0; width:100%; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:1rem 4rem;
+  background:rgba(250,247,240,0.96);
+  backdrop-filter:blur(12px);
+  border-bottom:0.5px solid var(--border);
+}
+.nav-logo { text-decoration:none; display:flex; align-items:center; gap:12px; }
+.nav-logo-text {
+  font-family:'Cinzel',serif; font-size:0.95rem; letter-spacing:0.18em;
+  color:var(--charcoal); display:flex; flex-direction:column; gap:2px;
+}
+.nav-logo-text span { font-size:0.5rem; letter-spacing:0.35em; color:var(--gold); font-family:'Raleway',sans-serif; font-weight:400; }
+.nav-links { display:flex; gap:2rem; align-items:center; }
+.nav-links a { font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--warm-gray); text-decoration:none; transition:color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color:var(--gold); }
+.nav-actions { display:flex; gap:1rem; align-items:center; }
+.btn-outline-sm {
+  font-family:'Raleway',sans-serif; font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase;
+  padding:0.5rem 1.2rem; border:0.5px solid var(--charcoal); background:transparent;
+  color:var(--charcoal); cursor:pointer; text-decoration:none; transition:all 0.2s;
+}
+.btn-outline-sm:hover { background:var(--charcoal); color:var(--ivory); }
+.btn-gold-sm {
+  font-family:'Raleway',sans-serif; font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase;
+  padding:0.5rem 1.2rem; border:none; background:var(--gold); color:var(--ivory);
+  cursor:pointer; text-decoration:none; transition:background 0.2s;
+}
+.btn-gold-sm:hover { background:var(--gold-dark); }
+.nav-user { font-size:0.72rem; color:var(--warm-gray); }
+.nav-user strong { color:var(--charcoal); }
+
+/* ── PAGE HEADER ── */
+.page-header {
+  background:var(--charcoal); padding:4rem 6rem 3rem;
+  position:relative; overflow:hidden;
+}
+.page-header-pattern {
+  position:absolute; inset:0; opacity:0.04;
+  background-image:repeating-linear-gradient(45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%);
+  background-size:20px 20px;
+}
+.page-header-inner { position:relative; z-index:1; }
+.page-eyebrow { font-size:0.55rem; letter-spacing:0.4em; text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem; display:flex; align-items:center; gap:0.8rem; }
+.page-eyebrow::before { content:''; width:2rem; height:0.5px; background:var(--gold); }
+.page-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,3.5rem); font-weight:300; color:var(--ivory); line-height:1.1; }
+.page-title em { font-style:italic; color:var(--gold); }
+.page-sub { font-size:0.65rem; color:rgba(250,247,240,0.4); margin-top:0.8rem; letter-spacing:0.1em; }
+
+/* ── ONGLETS CATÉGORIES ── */
+.cat-tabs {
+  display:flex; gap:0; padding:0 4rem;
+  background:var(--ivory); border-bottom:0.5px solid var(--border); overflow-x:auto;
+}
+.cat-tab {
+  font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase;
+  padding:1rem 1.5rem; text-decoration:none; color:var(--warm-gray);
+  border-bottom:2px solid transparent; transition:all 0.2s; white-space:nowrap;
+}
+.cat-tab:hover { color:var(--charcoal); }
+.cat-tab.active { color:var(--gold); border-bottom-color:var(--gold); }
+
+/* ── LAYOUT ── */
+.page-layout { display:grid; grid-template-columns:240px 1fr; min-height:calc(100vh - 220px); }
+
+/* ── SIDEBAR FILTRES ── */
+.filters-sidebar {
+  background:var(--ivory); border-right:0.5px solid var(--border);
+  padding:2rem 1.5rem; position:sticky; top:73px; height:fit-content;
+}
+.filter-title {
+  font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:300; font-style:italic;
+  color:var(--charcoal); margin-bottom:1.5rem; padding-bottom:0.8rem; border-bottom:0.5px solid var(--border);
+}
+.filter-group { margin-bottom:1.5rem; }
+.filter-label { display:block; font-size:0.55rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--warm-gray); margin-bottom:0.6rem; }
+.filter-select {
+  width:100%; padding:0.6rem 0.8rem; border:0.5px solid var(--border);
+  background:var(--bg-soft); font-family:'Raleway',sans-serif; font-size:0.75rem;
+  color:var(--charcoal); outline:none; cursor:pointer; transition:border-color 0.2s;
+}
+.filter-select:focus { border-color:var(--gold); }
+.price-row { display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; }
+.price-input {
+  width:100%; padding:0.6rem 0.8rem; border:0.5px solid var(--border);
+  background:var(--bg-soft); font-family:'Raleway',sans-serif; font-size:0.75rem;
+  color:var(--charcoal); outline:none; transition:border-color 0.2s;
+}
+.price-input:focus { border-color:var(--gold); }
+.btn-filter {
+  width:100%; padding:0.7rem; background:var(--charcoal); color:var(--gold);
+  border:none; font-family:'Raleway',sans-serif; font-size:0.6rem;
+  letter-spacing:0.2em; text-transform:uppercase; cursor:pointer; transition:all 0.2s; margin-bottom:0.5rem;
+}
+.btn-filter:hover { background:var(--gold); color:var(--charcoal); }
+.btn-reset {
+  display:block; text-align:center; font-size:0.55rem; letter-spacing:0.15em;
+  text-transform:uppercase; color:var(--warm-gray); text-decoration:none;
+  padding:0.4rem; transition:color 0.2s;
+}
+.btn-reset:hover { color:var(--gold); }
+
+/* ── ZONE PRODUITS ── */
+.products-area { padding:2rem 2.5rem; }
+.results-bar { margin-bottom:1.5rem; }
+.results-count { font-size:0.7rem; color:var(--warm-gray); letter-spacing:0.05em; }
+.results-count strong { color:var(--charcoal); font-size:0.9rem; }
+
+/* ── GRILLE PRODUITS ── */
+.products-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+
+/* ── CARTE PRODUIT ── */
+.product-card {
+  background:var(--ivory); border:0.5px solid var(--border);
+  overflow:hidden; transition:all 0.3s ease; position:relative;
+}
+.product-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,0.09); }
+
+.product-img {
+  aspect-ratio:3/4; position:relative; overflow:hidden;
+  background:linear-gradient(135deg, #2c2015, #1a1714);
+  display:flex; align-items:center; justify-content:center;
+}
+.product-img img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.9; transition:transform 0.5s; }
+.product-card:hover .product-img img { transform:scale(1.04); }
+.product-img-icon { opacity:0.12; }
+.product-img-icon svg { width:56px; fill:var(--gold); }
+
+.product-badge {
+  position:absolute; top:1rem; left:1rem; z-index:2;
+  font-size:0.5rem; letter-spacing:0.25em; text-transform:uppercase;
+  padding:0.3rem 0.7rem; background:var(--gold); color:var(--ivory);
+}
+
+.product-overlay {
+  position:absolute; inset:0; background:rgba(26,23,20,0.6);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:0.6rem; opacity:0; transition:opacity 0.3s;
+}
+.product-card:hover .product-overlay { opacity:1; }
+.overlay-btn {
+  font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase;
+  padding:0.6rem 1.5rem; text-decoration:none; transition:all 0.2s;
+  font-family:'Raleway',sans-serif; border:0.5px solid var(--ivory);
+  color:var(--ivory); background:transparent;
+}
+.overlay-btn:hover { background:var(--ivory); color:var(--charcoal); }
+.overlay-btn-gold { background:var(--gold); border-color:var(--gold); color:var(--charcoal); }
+.overlay-btn-gold:hover { background:var(--gold-dark); border-color:var(--gold-dark); color:var(--ivory); }
+
+.product-info { padding:1.2rem 1rem; border-top:0.5px solid var(--border); }
+.product-category { font-size:0.55rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); margin-bottom:0.3rem; }
+.product-name { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:400; margin-bottom:0.4rem; line-height:1.2; }
+.product-name a { text-decoration:none; color:inherit; transition:color 0.2s; }
+.product-name a:hover { color:var(--gold); }
+.product-price { font-size:0.85rem; font-weight:500; margin-top:0.3rem; }
+.product-price span { font-size:0.6rem; color:var(--warm-gray); font-weight:300; margin-left:0.2rem; }
+
+/* ── ÉTAT VIDE ── */
+.empty {
+  grid-column:1/-1; text-align:center; padding:6rem 2rem; color:var(--warm-gray);
+}
+.empty-icon { font-size:3rem; margin-bottom:1rem; opacity:0.3; }
+.empty p { font-size:0.85rem; letter-spacing:0.05em; }
+
+/* ── ACTIVE FILTERS ── */
+.active-filters { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem; }
+.filter-pill {
+  font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase;
+  padding:0.3rem 0.8rem; background:rgba(201,168,76,0.12);
+  border:0.5px solid var(--gold); color:var(--gold-dark);
+  display:flex; align-items:center; gap:0.4rem;
+}
+.filter-pill a { color:inherit; text-decoration:none; font-weight:600; }
+
+/* ── FOOTER ── */
+footer {
+  background:#141210; padding:2.5rem 6rem;
+  border-top:0.5px solid rgba(201,168,76,0.15);
+  display:flex; justify-content:space-between; align-items:center;
+}
+.footer-logo { font-family:'Cinzel',serif; font-size:0.9rem; letter-spacing:0.18em; color:var(--ivory); }
+.footer-copy { font-size:0.6rem; color:rgba(250,247,240,0.25); letter-spacing:0.1em; }
+
+/* ── RESPONSIVE ── */
+@media (max-width:1024px) {
+  nav { padding:1rem 2rem; }
+  .cat-tabs { padding:0 2rem; }
+  .page-layout { grid-template-columns:200px 1fr; }
+  footer { padding:2rem; }
+  .page-header { padding:3rem 2rem; }
+}
+@media (max-width:768px) {
+  nav { padding:0.8rem 1.2rem; flex-wrap:wrap; gap:0.5rem; }
+  .nav-links { display:none; }
+  .nav-actions { gap:0.5rem; }
+  .btn-outline-sm, .btn-gold-sm { font-size:0.55rem; padding:0.4rem 0.7rem; }
+  .page-header { padding:2.5rem 1.5rem; text-align:center; }
+  .page-title { font-size:2rem; }
+  .cat-tabs { padding:0 1rem; overflow-x:auto; flex-wrap:nowrap; }
+  .cat-tab { white-space:nowrap; font-size:0.55rem; }
+  .page-layout { grid-template-columns:1fr; }
+  .filters-sidebar { border-right:none; border-bottom:0.5px solid var(--border); padding:1rem 1.2rem; }
+  .filters-sidebar form { display:flex; flex-wrap:wrap; gap:0.6rem; align-items:flex-end; }
+  .filter-group { flex:1 1 140px; margin-bottom:0; }
+  .products-grid { grid-template-columns:repeat(2,1fr); gap:1rem; }
+  .products-area { padding:1.2rem; }
+  footer { flex-direction:column; gap:0.5rem; text-align:center; padding:1.5rem 1rem; }
+}
+@media (max-width:480px) {
+  .products-grid { grid-template-columns:1fr; }
+  .page-title { font-size:1.6rem; }
+  .product-name { font-size:1rem; }
+}
+
+/* ── SPÉCIFIQUE CHAUSSURES ── */
+.badge-stock { background:var(--gold); color:var(--ivory); }
+.badge-rupture { background:#8B2020; color:#fff; }
+.overlay-btn-disabled { opacity:0.4; cursor:not-allowed; border-color:rgba(250,247,240,0.3); }
+.product-meta { font-size:0.65rem; color:var(--warm-gray); margin-bottom:0.25rem; }

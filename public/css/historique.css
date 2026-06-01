@@ -3,8 +3,31 @@
 :root { --gold:#C9A84C; --ivory:#FAF7F0; --charcoal:#1A1714; --border:rgba(201,168,76,0.25); --bg:#F4F0E8; }
 body { font-family:'Raleway',sans-serif; background:var(--bg); color:var(--charcoal); }
 nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 4rem; background:var(--ivory); border-bottom:0.5px solid var(--border); }
-.nav-brand { font-size:0.9rem; letter-spacing:0.2em; font-weight:500; text-decoration:none; color:var(--charcoal); }
-.nav-links { display:flex; gap:1rem; }
+.nav-logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+}
+.nav-logo-text {
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  color: #1A1714;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-decoration: none;
+}
+.nav-logo-text span {
+  font-size: 0.5rem;
+  letter-spacing: 0.35em;
+  color: #C9A84C;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+}.nav-links { display:flex; gap:1rem; }
 .nav-links a { font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none; color:#6B6560; transition:color 0.2s; }
 .nav-links a:hover { color:var(--gold); }
 .container { max-width:900px; margin:3rem auto; padding:0 2rem; }

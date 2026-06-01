@@ -196,3 +196,68 @@ footer {
 .footer-logo { font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 0.18em; color: var(--ivory); }
 .footer-copy { font-size: 0.6rem; color: rgba(250,247,240,0.25); letter-spacing: 0.1em; }
 .cat-bg { position: relative; }
+/* ============================================================
+   RESPONSIVE — À coller à la fin de public/css/acceuil.css
+   ============================================================ */
+
+/* ── Tablette (≤ 1024px) ── */
+@media (max-width: 1024px) {
+  nav { padding: 1rem 2rem; }
+  .filters-bar { padding: 1rem 2rem; }
+  .results-area { padding: 2rem 2rem 4rem; }
+  footer { padding: 2rem; }
+  .page-header { padding: 3rem 2rem; }
+}
+
+/* ── Mobile large (≤ 768px) ── */
+@media (max-width: 768px) {
+  /* Navigation */
+  nav {
+    padding: 0.8rem 1.2rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .nav-links {
+    display: none; /* masqué sur mobile */
+  }
+  .nav-actions {
+    gap: 0.5rem;
+  }
+  .btn-outline-sm, .btn-gold-sm {
+    font-size: 0.55rem;
+    padding: 0.4rem 0.7rem;
+  }
+
+  /* Page header */
+  .page-header { padding: 2.5rem 1.5rem; text-align: center; }
+  .page-title { font-size: 2rem; }
+
+  /* Filtres */
+  .filters-bar { padding: 1rem 1.2rem; }
+  .filters-bar form { flex-direction: column; gap: 0.6rem; }
+  .filter-group { width: 100%; }
+  .filter-select, .filter-input { width: 100%; min-width: unset; }
+  .search-wrap { width: 100%; }
+  .search-input { width: 100%; flex: 1; }
+  .price-row .filter-input { width: 50%; }
+  .btn-filter, .clear-link { width: 100%; text-align: center; }
+
+  /* Résultats */
+  .results-area { padding: 1.5rem 1.2rem 3rem; }
+
+  /* Footer */
+  footer {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* ── Mobile petit (≤ 480px) ── */
+@media (max-width: 480px) {
+  .page-title { font-size: 1.6rem; }
+  .nav-logo-text { display: none; } /* garde juste le logo SVG */
+  .product-name { font-size: 1rem; }
+  .btn-detail, .btn-cart { font-size: 0.55rem; padding: 0.5rem; }
+}

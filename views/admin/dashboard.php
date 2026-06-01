@@ -48,6 +48,7 @@ $statusColors    = [
     'Livrée'     => '#4a7c59',
     'Annulée'    => '#c0392b',
 ];
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -561,7 +562,8 @@ select.status-select { font-family:'Raleway',sans-serif; font-size:0.65rem; padd
             <option>Jellaba Femme</option>
             <option>Jabador</option>
             <option>Jellaba Homme</option>
-                      </select>
+            <option>Chaussures</option>
+          </select>
         </div>
         <div class="field">
           <label>Prix (DH) *</label>
@@ -575,6 +577,13 @@ select.status-select { font-family:'Raleway',sans-serif; font-size:0.65rem; padd
       <div class="field">
         <label>Description</label>
         <textarea name="description" placeholder="Description du produit…"></textarea>
+        <button type="button" id="btn-ia" onclick="classifierIA()" 
+  style="margin-top:8px; padding:8px 16px; background:#C9A84C; color:white; border:none; cursor:pointer; font-size:13px; border-radius:4px;">
+  ✨ Classifier avec IA
+</button>
+<div id="ia-result" style="display:none; margin-top:10px; padding:12px; 
+  background:#f0f8e8; border:1px solid #4a7c59; font-size:13px; border-radius:4px; line-height:1.8;">
+</div>
       </div>
       <div class="field">
         <label>Image</label>
@@ -609,7 +618,8 @@ select.status-select { font-family:'Raleway',sans-serif; font-size:0.65rem; padd
             <option>Jellaba Femme</option>
             <option>Jabador</option>
             <option>Jellaba Homme</option>
-                      </select>
+            <option>Chaussures</option>
+          </select>
         </div>
         <div class="field">
           <label>Prix (DH) *</label>
@@ -665,6 +675,69 @@ function openEdit(product) {
   openModal('modal-edit');
 }
 </script>
- 
+ <script>
+function classifierIA() {
+    const nom         = document.querySelector('#modal-add input[name="name"]')?.value.trim() || '';
+    const description = document.querySelector('#modal-add textarea[name="description"]')?.value.trim() || '';
+    const btn         = document.getElementById('btn-ia');
+    const result      = document.getElementById('ia-result');
+
+    if (!nom && !description) {
+        alert('Remplis au moins le nom ou la description du produit.');
+        return;
+    }
+
+    btn.textContent = '⏳ Analyse en cours...';
+    btn.disabled    = true;
+    result.style.display = 'none';
+
+    const formData = new FormData();
+    formData.append('nom', nom);
+    formData.append('description', description);
+
+    fetch('/E-STORE/controllers/AIControllers.php', {
+        method: 'POST',
+        body:   formData
+    })
+    .then(async (response) => {
+        const text = await response.text();
+        try {
+            return JSON.parse(text);
+        } catch (e) {
+            throw new Error('Réponse serveur invalide : ' + text);
+        }
+    })
+    .then(res => {
+        btn.textContent = '✨ Classifier avec IA';
+        btn.disabled    = false;
+
+        if (!res || res.success !== true || !res.data) {
+            throw new Error(res?.error || 'Réponse IA invalide');
+        }
+
+        const d = res.data;
+
+        // Remplir automatiquement la catégorie
+        const catSelect = document.querySelector('#modal-add select[name="category"]');
+        if (catSelect && d.category) catSelect.value = d.category;
+
+        // Afficher le résultat
+        result.style.display = 'block';
+        result.innerHTML = `
+            <strong>✅ Classification IA terminée</strong><br>
+            📦 Catégorie : <strong>${d.category ?? 'N/A'}</strong><br>
+            👤 Genre : <strong>${d.genre ?? 'N/A'}</strong><br>
+            🎉 Occasion : <strong>${d.occasion ?? 'N/A'}</strong><br>
+            📊 Confiance : <strong>${d.confidence ?? 'N/A'}</strong><br>
+            💬 <em>${d.explication ?? ''}</em>
+        `;
+    })
+    .catch(err => {
+        btn.textContent = '✨ Classifier avec IA';
+        btn.disabled    = false;
+        alert('Erreur IA : ' + err.message);
+    });
+}
+</script>
 </body>
 </html>

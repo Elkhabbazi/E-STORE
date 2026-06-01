@@ -40,6 +40,7 @@ require_once 'models/Visite.php';
   <a href="views/products/index.php">Toutes les collections</a>
   <a href="views/products/femmes.php">Collection Femmes</a>
   <a href="views/products/hommes.php">Collection Hommes</a>
+  <a href="views/products/chaussures.php">Chaussures</a>
 </div>
   <div class="nav-actions">
     <a href="views/auth/login.php" class="btn-outline">Connexion</a>
@@ -226,8 +227,9 @@ require_once 'models/Visite.php';
           if (!str_starts_with($imgPath, 'public/') && !str_starts_with($imgPath, 'http')) {
               $imgPath = 'public/images/' . $imgPath;
           }
-        ?>
-        <img src="<?= htmlspecialchars($imgPath) ?>" alt="<?= htmlspecialchars($product['name']) ?>" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.9;">
+    ?>
+
+<img src="<?= htmlspecialchars($imgPath) ?>" alt="<?= htmlspecialchars($product['name']) ?>" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.9;">
         <?php else: ?>
 
           <div class="product-img-icon">
@@ -322,7 +324,7 @@ require_once 'models/Visite.php';
         <li><a href="#">Caftans</a></li>
         <li><a href="#">Takchitas</a></li>
         <li><a href="#">Jellabas</a></li>
-        <li><a href="#">Nouveautés</a></li>
+        <li><a href="#">Chaussures</a></li>
       </ul>
     </div>
     <div>
@@ -345,7 +347,7 @@ require_once 'models/Visite.php';
     </div>
   </div>
   <div class="footer-bottom">
-    <p class="footer-copy">© 2025 Dar Al Caftan. Tous droits réservés.</p>
+    <p class="footer-copy">© 2026 Dar Al Caftan. Tous droits réservés.</p>
     <p class="footer-copy">Fait avec soin au Maroc 🇲🇦</p>
   </div>
 </footer>

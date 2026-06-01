@@ -31,7 +31,25 @@ $statusColors = [
 </head>
 <body>
 <nav>
-  <a class="nav-brand" href="../../index.php">DAR AL CAFTAN</a>
+<a href="../../index.php" class="nav-logo">
+  <svg width="48" height="48" viewBox="0 0 86 86">
+    <polygon points="43,4 80,23 80,63 43,82 6,63 6,23" fill="#FFF8F0" stroke="#C4956A" stroke-width="1"/>
+    <polygon points="43,13 70,28 70,58 43,73 16,58 16,28" fill="none" stroke="rgba(196,149,106,0.28)" stroke-width="0.6"/>
+    <text x="43" y="39" text-anchor="middle" font-family="serif" font-size="15" fill="#8B4513" letter-spacing="2">DAC</text>
+    <line x1="28" y1="46" x2="58" y2="46" stroke="#C4956A" stroke-width="0.7"/>
+    <text x="43" y="58" text-anchor="middle" font-family="sans-serif" font-size="6" fill="#C4956A" letter-spacing="3">MAROC</text>
+    <circle cx="43" cy="4"  r="2.5" fill="#C4956A"/>
+    <circle cx="80" cy="23" r="2.5" fill="#C4956A"/>
+    <circle cx="80" cy="63" r="2.5" fill="#C4956A"/>
+    <circle cx="43" cy="82" r="2.5" fill="#C4956A"/>
+    <circle cx="6"  cy="63" r="2.5" fill="#C4956A"/>
+    <circle cx="6"  cy="23" r="2.5" fill="#C4956A"/>
+  </svg>
+  <div class="nav-logo-text">
+    DAR AL CAFTAN
+    <span>Haute Couture Marocaine</span>
+  </div>
+</a>
   <div class="nav-links">
     <a href="../products/index.php">Collections</a>
     <a href="../cart/index.php">🛒 Panier</a>
